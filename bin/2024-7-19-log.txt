@@ -1,0 +1,7 @@
+14:9:44 => [error]first log message!!
+14:9:44 => [error]/home/mprpc/example/callee/userservice.cc:main:106
+14:9:44 => [info]service_name:UserServiceRpc
+14:9:44 => [info]method_name:Login
+14:9:44 => [info]method_name:Register
+14:9:44 => [info]service_name:FriendServiceRpc
+14:9:44 => [info]method_name:GetFriendList

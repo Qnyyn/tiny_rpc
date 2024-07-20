@@ -1,0 +1,42 @@
+syntax = "proto3";//声明protobuf的版本
+
+package fixbuf;//相当于namespace
+
+//定义下面的选项，表示生成service 服务类和rpc方法描述，默认不生成
+option cc_generic_services = true;
+message ResultCode{
+    int32 errcode = 1;
+    bytes errmsg = 2;
+}
+
+//定义登录请求消息类型 name pwd
+message LoginRq{
+    //等于不是赋值，而是消息类型
+    bytes name = 1;
+    bytes pwd = 2;
+}
+
+//定义登录响应消息类型
+message LoginRs{
+    //这里的数据类型不是c++里的是protocbuf里的
+    bool success = 1;
+}
+message User{
+    uint32 age = 1;
+    bytes name = 2;
+    enum Sex{
+        Man = 0;
+        Woman = 1;
+    };
+    Sex sex = 3;
+}
+message GetFriendList{
+    ResultCode err = 1;
+    repeated User friend_list = 2;
+}
+
+service UserServiceRpc{
+    rpc login(LoginRq) returns (LoginRs);
+}
+
+//通过protoc test.proto --cpp_out=./生成相关文件
