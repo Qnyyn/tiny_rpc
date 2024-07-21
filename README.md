@@ -1,6 +1,6 @@
 ## 编译
 运行环境为Ubuntu22.04
-依赖库:protobuf muduo
+依赖库:protobuf muduo zookeeper
 
 进入build 目录下 cmake ..
 
