@@ -6,6 +6,8 @@
 
 make生成可执行文件provider  consumer
 
+在bin目录，更改配置文件的信息，提供ZK的ip和端口
+
 ./provider -i test.conf
 
 ./consumer-i test.conf
